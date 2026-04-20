@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../globals.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
+    <title>Place Bets</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="bet.html" class="active">Bets</a>
+            <a href="upcoming.html">Upcoming Races</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <main class="bet-container">
+        <!-- Main Content Area -->
+        <section class="bet-content">
+            <div style="margin-top: 120px; text-align: left; margin-left: 20px;">
+                <h1 id="title" style="font-size: 4rem; text-shadow: none; text-align: left; margin: 0;">Place Your Bets</h1>
+                <p style="color: #555; font-size: 1.2rem; margin-top: 10px;">Select a driver and place your bet on the next race.</p>
+            </div>
+            
+            <!-- We've given this div the ID "drivers-list" so JS can populate it -->
+            <div class="features" id="drivers-list" style="justify-content: flex-start; padding: 40px 20px;">
+                <!-- Drivers will be loaded here dynamically from driverdb.json -->
+            </div>
+        </section>
+        
+        <!-- Sidebar -->
+        <aside id="betting_sidebar" class="sidebar">
+            <form action="#" id="BetForm" class="bet-form">
+                <h2>Bet Slip</h2>
+                <label for="Bet">Wager Amount:</label>
+                <input type="text" id="Bet" name="Bet" placeholder="-100/100 amount">
+                <button type="submit" class="primary-btn" style="width: 100%; margin-top: 10px;">Place Bet</button>
+            </form>
+            <div class="sidebar-info">
+                <h3>Sidebar Info</h3>
+                <p>Select a driver from the list to begin.</p>
+            </div>
+        </aside>
+    </main>
+
+    <script src="betcontroller.js"></script>
+</body>
+</html>
