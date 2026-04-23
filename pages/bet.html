@@ -5,33 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../globals.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./bet.css">
     <title>Place Bets</title>
 </head>
 <body>
     <nav>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="bet.html" class="active">Bets</a>
-            <a href="upcoming.html">Upcoming Races</a>
-            <a href="about.html">About</a>
+            <a href="/index.html">Home</a>
+            <a href="/pages/bet.html" class="active">Bets</a>
+            <a href="/pages/upcoming.html">Upcoming Races</a>
+            <a href="/pages/about.html">About</a>
         </div>
     </nav>
 
     <main class="bet-container">
-        <!-- Main Content Area -->
-        <section class="bet-content">
+    
+        <!-- <section class="bet-content">
             <div style="margin-top: 120px; text-align: left; margin-left: 20px;">
                 <h1 id="title" style="font-size: 4rem; text-shadow: none; text-align: left; margin: 0;">Place Your Bets</h1>
                 <p style="color: #555; font-size: 1.2rem; margin-top: 10px;">Select a driver and place your bet on the next race.</p>
             </div>
             
-            <!-- We've given this div the ID "drivers-list" so JS can populate it -->
+          
             <div class="features" id="drivers-list" style="justify-content: flex-start; padding: 40px 20px;">
-                <!-- Drivers will be loaded here dynamically from driverdb.json -->
+
             </div>
-        </section>
+        </section> -->
+
+        <section class="Ongoing-bets">
+        <div class="bet-card">
+            <img src="" alt="">
+            <h2>Will Max V. win the 2026 Championship?</h2>
+            <p>Place your bet on whether Max Verstappen will win the 2026 Formula 1 World Championship.</p>
+        </div>
         
-        <!-- Sidebar -->
+        <div class="bet-card">
+            <img src="" alt="">
+            <h2>Will Max V. win the 2026 Championship?</h2>
+            <p>Place your bet on whether Max Verstappen will win the 2026 Formula 1 World Championship.</p>
+        </div>
+        <div class="bet-card">
+            <img src="" alt="">
+            <h2>Will Max V. win the 2026 Championship?</h2>
+            <p>Place your bet on whether Max Verstappen will win the 2026 Formula 1 World Championship.</p>
+        </div>
+    </section>
+
         <aside id="betting_sidebar" class="sidebar">
             <form action="#" id="BetForm" class="bet-form">
                 <h2>Bet Slip</h2>
@@ -45,7 +64,9 @@
             </div>
         </aside>
     </main>
+    
+    
 
-    <script src="betcontroller.js"></script>
+    <script src="../betcontroller.js"></script>
 </body>
 </html>

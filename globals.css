@@ -1,10 +1,10 @@
 :root {
-    --bg-color: #dddddd;
+    --bg-color: #000000;
     --nav-bg: rgba(238, 238, 238, 0.85);
     --text-color: #000000;
     --accent-color: #e10600;
     --btn-bg: #eeeeee;
-    --btn-hover: #000000;
+    --btn-hover: #00000048;
     
 
     --hero-text: #ffffff;
@@ -88,6 +88,19 @@ nav a.active::after {
     width: 100%;
 }
 
+.amount {
+    position: inherit;
+    right: 30px;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-color);
+}
+
+.amount:hover {
+    color: var(--accent-color);
+    transform: translateY(-1px);
+}
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -114,21 +127,20 @@ nav a.active::after {
     0% {
         transform: scale(1);
     }
-
     100% {
         transform: scale(1.1);
     }
 }
 
-/* .hero-overlay {
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.252) 0%, rgba(255, 255, 255, 0.442) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgb(0, 0, 0));
     z-index: 2;
-} */
+}
 
 .hero-content {
     position: relative;
@@ -142,7 +154,7 @@ nav a.active::after {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(3px);
     }
 
     to {
@@ -168,6 +180,7 @@ nav a.active::after {
     font-weight: 400;
     margin: 0 0 40px 0;
     color: #d1d1d1;
+
 }
 
 /* Buttons */
@@ -206,7 +219,7 @@ button::before {
 
 button:hover {
     color: var(--btn-bg);
-    transform: translateY(-3px);
+
 }
 
 button:hover::before {
@@ -252,28 +265,27 @@ about{
 .features {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
     padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+
+    margin: auto;
     flex-wrap: wrap;
     position: relative;
-    z-index: 4;
 }
 
 .feature-card {
-    background: #eeeeee;
+    background: #eeeeee0c;
     border-radius: 10px;
     padding: 25px;
     width: 250px;
     text-align: center;
-    border: 1px solid rgba(48, 42, 42, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.13);
     transition: transform 0.3s ease;
     
 }
 
 .feature-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     border-color: var(--accent-color);
 }
@@ -284,15 +296,22 @@ about{
 }
 
 .feature-card h3 {
+    color: var(--hero-text);
     font-family: 'Outfit', sans-serif;
     font-size: 1.5rem;
     margin: 0 0 15px 0;
 }
 
 .feature-card p {
-    color: #555555;
+    color: #ffffff;
     line-height: 1.6;
     margin: 0px 0 10px 0;
+}
+.feature-header {
+    color: var(--hero-text);
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 50px 0 10px 0;
 }
 
 @media (max-width: 900px) {
@@ -409,4 +428,17 @@ about{
         margin: 20px;
         position: static;
     }
+}
+
+testimonials {
+    color: var(--nav-bg);
+    border-color: #e10600;
+
+}
+
+footer {
+    background: linear-gradient(to bottom, rgba(39, 39, 39, 0.349));
+    color: var(--nav-bg);
+    text-align: center;
+    padding: 10px;
 }
