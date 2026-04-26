@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../globals.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
+    <title>All Bet Games</title>
+    <style>
+        /* 
+           Styling designed to match the global theme. 
+           Per instructions, no animations or transitions have been added. 
+        */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .games-wrapper {
+            max-width: 1400px;
+            margin: 120px auto 40px auto;
+            padding: 0 20px;
+        }
+        
+        .games-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .games-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            color: var(--hero-text);
+            margin: 0;
+            text-transform: uppercase;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .game-card {
+            background: rgba(30, 30, 30, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            color: #ffffff;
+        }
+        
+        .game-card .category {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        
+        .game-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+        
+        .game-card p.desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: #b0b0b0;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+        
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .option-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .option-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-color);
+        }
+        
+        .option-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .option-multiplier {
+            color: var(--accent-color);
+            font-weight: 800;
+            background: rgba(225, 6, 0, 0.1);
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+        
+        .place-bet-btn {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+        }
+
+        .place-bet-btn:hover {
+            background-color: #c00500;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/pages/bet.html">Bets</a>
+            <a href="/pages/upcoming.html">Upcoming Races</a>
+            <a href="/pages/betgames.html" class="active">All Games</a>
+            <a href="/pages/about.html">About</a>
+        </div>
+        <div class="amount">{amount}</div>
+    </nav>
+
+    <div class="games-wrapper">
+        <div class="games-header">
+            <h1>All Bet Games</h1>
+        </div>
+
+        <div class="games-grid">
+            
+            <!-- Game 1: Race Winner -->
+            <div class="game-card">
+                <div class="category">classic</div>
+                <h2>Race Winner</h2>
+                <p class="desc">Pick who wins Sunday's Grand Prix</p>
+                <div class="options-list">
+                    <div class="option-item">
+                        <span class="option-label">Lando Norris (McLaren)</span>
+                        <span class="option-multiplier">2.5x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Oscar Piastri (McLaren)</span>
+                        <span class="option-multiplier">3.0x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Max Verstappen (Red Bull)</span>
+                        <span class="option-multiplier">2.8x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Charles Leclerc (Ferrari)</span>
+                        <span class="option-multiplier">4.5x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Lewis Hamilton (Ferrari)</span>
+                        <span class="option-multiplier">5.0x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">George Russell (Mercedes)</span>
+                        <span class="option-multiplier">4.0x</span>
+                    </div>
+                </div>
+                <button class="place-bet-btn">Select Bet</button>
+            </div>
+
+            <!-- Game 2: Pole Position -->
+            <div class="game-card">
+                <div class="category">classic</div>
+                <h2>Pole Position</h2>
+                <p class="desc">Who will set the fastest qualifying lap?</p>
+                <div class="options-list">
+                    <div class="option-item">
+                        <span class="option-label">Lando Norris</span>
+                        <span class="option-multiplier">2.8x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Max Verstappen</span>
+                        <span class="option-multiplier">2.5x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Charles Leclerc</span>
+                        <span class="option-multiplier">3.5x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Oscar Piastri</span>
+                        <span class="option-multiplier">3.2x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">George Russell</span>
+                        <span class="option-multiplier">4.0x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Lewis Hamilton</span>
+                        <span class="option-multiplier">4.5x</span>
+                    </div>
+                </div>
+                <button class="place-bet-btn">Select Bet</button>
+            </div>
+
+            <!-- Game 3: Constructor Winner -->
+            <div class="game-card">
+                <div class="category">classic</div>
+                <h2>Constructor Winner</h2>
+                <p class="desc">Which team scores most points this weekend?</p>
+                <div class="options-list">
+                    <div class="option-item">
+                        <span class="option-label">McLaren</span>
+                        <span class="option-multiplier">1.8x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Red Bull</span>
+                        <span class="option-multiplier">2.5x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Ferrari</span>
+                        <span class="option-multiplier">3.0x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Mercedes</span>
+                        <span class="option-multiplier">3.5x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Aston Martin</span>
+                        <span class="option-multiplier">8.0x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Williams</span>
+                        <span class="option-multiplier">12.0x</span>
+                    </div>
+                </div>
+                <button class="place-bet-btn">Select Bet</button>
+            </div>
+
+            <!-- Game 4: Podium Predictor -->
+            <div class="game-card">
+                <div class="category">classic</div>
+                <h2>Podium Predictor (Top 3)</h2>
+                <p class="desc">Pick the exact top 3 finishing order</p>
+                <div class="options-list">
+                    <div class="option-item">
+                        <span class="option-label">McLaren 1-2 + Verstappen P3</span>
+                        <span class="option-multiplier">6.0x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Norris, Verstappen, Piastri</span>
+                        <span class="option-multiplier">8.0x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Verstappen, Norris, Piastri</span>
+                        <span class="option-multiplier">7.5x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Leclerc, Hamilton, Norris</span>
+                        <span class="option-multiplier">15.0x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Norris, Russell, Piastri</span>
+                        <span class="option-multiplier">10.0x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Alonso, Hadjar, Bearman</span>
+                        <span class="option-multiplier">50.0x</span>
+                    </div>
+                </div>
+                <button class="place-bet-btn">Select Bet</button>
+            </div>
+
+            <!-- Game 5: Tsunoda Demotion Cope -->
+            <div class="game-card">
+                <div class="category">meme</div>
+                <h2>Tsunoda Demotion Cope</h2>
+                <p class="desc">Will Yuki get a race seat back mid-season after Red Bull demoted him?</p>
+                <div class="options-list">
+                    <div class="option-item">
+                        <span class="option-label">YES - Red Bull will call him back</span>
+                        <span class="option-multiplier">3.5x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">NO - He stays as reserve all year</span>
+                        <span class="option-multiplier">1.6x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Joins a different team entirely</span>
+                        <span class="option-multiplier">8.0x</span>
+                    </div>
+                </div>
+                <button class="place-bet-btn">Select Bet</button>
+            </div>
+
+            <!-- Game 6: Cadillac Debut -->
+            <div class="game-card">
+                <div class="category">meme</div>
+                <h2>Cadillac Debut</h2>
+                <p class="desc">Who scores Cadillac's first-ever F1 point?</p>
+                <div class="options-list">
+                    <div class="option-item">
+                        <span class="option-label">Checo Perez scores first</span>
+                        <span class="option-multiplier">2.2x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Valtteri Bottas scores first</span>
+                        <span class="option-multiplier">2.5x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Neither scores all season</span>
+                        <span class="option-multiplier">4.0x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Cadillac podium</span>
+                        <span class="option-multiplier">25.0x</span>
+                    </div>
+                </div>
+                <button class="place-bet-btn">Select Bet</button>
+            </div>
+
+            <!-- Game 7: Ferrari Strategy Disaster -->
+            <div class="game-card">
+                <div class="category">meme</div>
+                <h2>Ferrari Strategy Disaster</h2>
+                <p class="desc">Will Ferrari mess up strategy/pit stops this weekend?</p>
+                <div class="options-list">
+                    <div class="option-item">
+                        <span class="option-label">YES - classic Ferrari moment</span>
+                        <span class="option-multiplier">1.4x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">NO - they actually execute</span>
+                        <span class="option-multiplier">3.5x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Leclerc radio meltdown on broadcast</span>
+                        <span class="option-multiplier">2.8x</span>
+                    </div>
+                </div>
+                <button class="place-bet-btn">Select Bet</button>
+            </div>
+
+            <!-- Game 8: Chaos Parlay -->
+            <div class="game-card">
+                <div class="category">predatory</div>
+                <h2>Chaos Parlay</h2>
+                <p class="desc">Predict ALL chaos events: Safety Car + DNF(s) + Red Flag + Rain</p>
+                <div class="options-list">
+                    <div class="option-item">
+                        <span class="option-label">Safety Car only</span>
+                        <span class="option-multiplier">2.0x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Safety Car + 3+ DNFs</span>
+                        <span class="option-multiplier">4.5x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Safety Car + DNFs + Red Flag</span>
+                        <span class="option-multiplier">12.0x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">FULL CHAOS: SC + 5+ DNFs + Red Flag + Rain</span>
+                        <span class="option-multiplier">75.0x</span>
+                    </div>
+                    <div class="option-item">
+                        <span class="option-label">Boring race (none of the above)</span>
+                        <span class="option-multiplier">2.5x</span>
+                    </div>
+                </div>
+                <button class="place-bet-btn">Select Bet</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
